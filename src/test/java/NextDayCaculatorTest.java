@@ -54,4 +54,14 @@ public class NextDayCaculatorTest {
         int[] actual = NextDayCaculator.findNextDay(time);
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("Test the last day of the year")
+    public void testTheLastDayOfTheYear() {
+        int[] time = {31, 12, 2018};
+        int[] expected = {1, 1, 2019};
+
+        int[] actual = NextDayCaculator.findNextDay(time);
+        assertArrayEquals(expected, actual);
+    }
 }
