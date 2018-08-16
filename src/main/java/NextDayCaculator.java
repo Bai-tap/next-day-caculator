@@ -17,7 +17,7 @@ public class NextDayCaculator {
         } else leapYear = false;
 
         if (time[1] == 2) {
-            if (leapYear) {
+            if (leapYear == false) {
                 if (time[0] == 28) {
                     time[0] = 1;
                     time[1] = 3;
