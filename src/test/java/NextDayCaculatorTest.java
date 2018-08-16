@@ -24,4 +24,14 @@ public class NextDayCaculatorTest {
         int[] actual = NextDayCaculator.findNextDay(time);
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("Test the last day of March, 2018")
+    public void testLastDayOfMarch() {
+        int[] time = {30, 4, 2018};
+        int[] expected = {1, 5, 2018};
+
+        int[] actual = NextDayCaculator.findNextDay(time);
+        assertArrayEquals(expected, actual);
+    }
 }
