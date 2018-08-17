@@ -3,21 +3,8 @@ public class NextDayCaculator {
     }
 
     public static int[] findNextDay(int[] time) {
-        boolean leapYear;
-        if (time[2] % 4 == 0) {
-            if (time[2] % 100 == 0) {
-                if (time[2] % 400 == 0) {
-                    leapYear = true;
-                } else {
-                    leapYear = false;
-                }
-            } else {
-                leapYear = true;
-            }
-        } else leapYear = false;
-
         if (time[1] == 2) {
-            if (leapYear == false) {
+            if (getLeapYear(time) == false) {
                 if (time[0] == 28) {
                     time[0] = 1;
                     time[1] = 3;
@@ -48,5 +35,20 @@ public class NextDayCaculator {
             }
         }
         return time;
+    }
+
+    public static boolean getLeapYear(int[] time) {
+        boolean leapYear;
+        if (time[2] % 4 == 0) {
+            if (time[2] % 100 == 0) {
+                if (time[2] % 400 == 0) {
+                    return leapYear = true;
+                } else {
+                    return leapYear = false;
+                }
+            } else {
+                return leapYear = true;
+            }
+        } else return leapYear = false;
     }
 }
